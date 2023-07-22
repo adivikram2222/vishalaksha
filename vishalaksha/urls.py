@@ -50,9 +50,6 @@ admin.site.index_title = 'Autobot robotics'
 
 
 
-
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index, name = 'index'),
@@ -61,11 +58,9 @@ urlpatterns = [
     path('about',views.about, name = 'about'),
     
     
-    path('about',views.about, name = 'about'),
-    path('about',views.about, name = 'about'),
-    path('about',views.about, name = 'about'),
-    
-    
+    path('tech',include('tech.urls')),
+    path('real',include('realstate.urls')),
+    # path('about',views.about, name = 'about'),
     
     
     
