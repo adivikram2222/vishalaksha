@@ -50,7 +50,11 @@ from realstate import realviews
 
 
 urlpatterns = [
-    path('realstate/',realviews.index, name='realstate')
+    path('realstate/',realviews.index, name='realstate'),
+    path('about', realviews.about, name='about'),
+    path('contact', realviews.contact, name='contact'),
+    path('services', realviews.services, name='services'),
+    path('properties', realviews.properties, name='properties')
     
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
