@@ -16,7 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home import views
 
 
 
@@ -46,23 +45,12 @@ admin.site.index_title = 'Autobot robotics'
 
 # ...
 # handler500 = custom_error_view
-
+from realstate import realviews
 
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',views.index, name = 'index'),
-    path('contact',views.contact, name = 'contact'),
-    path('services',views.services, name = 'services'),
-    path('about',views.about, name = 'about'),
-    
-    
-    # path('tech',include('tech.urls')),
-    path('real',include('realstate.urls')),
-    # path('about',views.about, name = 'about'),
-    
-    
+    path('realstate/',realviews.index, name='realstate')
     
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
