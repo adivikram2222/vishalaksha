@@ -1,5 +1,6 @@
-from django.contrib import admin
-# from models import Category,Property
+from django.contrib import admin 
+from .models import Category,Property
 
 # Register your models here.
-# register.site.admin.Category
+admin.site.register(Category)
+admin.site.register(Property)

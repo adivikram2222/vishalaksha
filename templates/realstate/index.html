@@ -67,27 +67,28 @@
           <div class="col-12">
             <div class="property-slider-wrap">
               <div class="property-slider">
-                <div class="property-item">
+                {% for i in prop %}
+                <div class="property-item {% if forloop.counter0 == 0 %} active {% endif %}">
                   <a href="property-single.html" class="img">
-                    <img src="{% static 'real/images/img_1.jpg' %}" alt="Image" class="img-fluid" />
+                    <img src="{{i.image.url}}" alt="Image" class="img-fluid" />
                   </a>
 
                   <div class="property-content">
-                    <div class="price mb-2"><span>₹9000</span></div>
+                    <div class="price mb-2"><span>₹{{i.expected_price}}</span></div>
                     <div>
                       <span class="d-block mb-2 text-black-50"
-                        >Harsita Apartment, Ave. 2BHK</span
+                        >{{i.furnished_status}}, {{i.name_of_property}}</span
                       >
-                      <span class="city d-block mb-3">Harsita Apartment, Rupaspur</span>
+                      <span class="city d-block mb-3">{{i.name_of_property}}</span>
 
                       <div class="specs d-flex mb-4">
                         <span class="d-block d-flex align-items-center me-3">
                           <span class="icon-bed me-2"></span>
-                          <span class="caption">2 beds</span>
+                          <span class="caption">{{i.number_of_bedrooms}}</span>
                         </span>
                         <span class="d-block d-flex align-items-center">
                           <span class="icon-bath me-2"></span>
-                          <span class="caption">2 baths</span>
+                          <span class="caption">{{i.number_of_bathroom}}</span>
                         </span>
                       </div>
 
@@ -99,9 +100,10 @@
                     </div>
                   </div>
                 </div>
-                <!-- .item -->
+                {% endfor %}
+                
 
-                <div class="property-item">
+                <!-- <div class="property-item">
                   <a href="property-single.html" class="img">
                     <img src="{% static 'real/images/img_2.jpg' %}" alt="Image" class="img-fluid" />
                   </a>
@@ -133,7 +135,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- .item -->
+                
 
                 <div class="property-item">
                   <a href="property-single.html" class="img">
@@ -167,8 +169,8 @@
                     </div>
                   </div>
                 </div>
-                <!-- .item -->
-
+                
+                
                 <div class="property-item">
                   <a href="property-single.html" class="img">
                     <img src="{% static 'real/images/img_4.jpg' %}" alt="Image" class="img-fluid" />
@@ -201,7 +203,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- .item -->
+                
 
                 <div class="property-item">
                   <a href="property-single.html" class="img">
@@ -235,7 +237,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- .item -->
+               
 
                 <div class="property-item">
                   <a href="property-single.html" class="img">
@@ -269,7 +271,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- .item -->
+                
 
                 <div class="property-item">
                   <a href="property-single.html" class="img">
@@ -303,7 +305,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- .item -->
+               
 
                 <div class="property-item">
                   <a href="property-single.html" class="img">
@@ -337,7 +339,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- .item -->
+                
 
                 <div class="property-item">
                   <a href="property-single.html" class="img">
@@ -371,7 +373,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- .item -->
+               -->
               </div>
               
 

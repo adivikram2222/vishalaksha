@@ -1,8 +1,18 @@
 from django.shortcuts import render
+from .models import Category,Property
 
 # Create your views here.
 def index(request):
-    return render (request,'realstate/index.html')
+    category = Category.objects.all()
+    property = Property.objects.all()
+    contaxt = {
+        'prop':property,
+         'cat':category
+       
+    }
+    
+
+    return render (request,'realstate/index.html',contaxt)
 def about(request):
     return render (request,'realstate/about.html')
 def contact(request):
@@ -10,4 +20,13 @@ def contact(request):
 def services(request):
     return render (request,'realstate/services.html')
 def properties(request):
-    return render (request,'realstate/properties.html')
+    category = Category.objects.all()
+    property = Property.objects.all()
+    contaxt = {
+        'prop':property,
+         'cat':category
+       
+    }
+    return render (request,'realstate/properties.html',contaxt)
+def property(request):
+    return render (request,'realstate/property-single.html')

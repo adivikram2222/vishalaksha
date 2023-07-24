@@ -378,8 +378,61 @@
       </div>
     </div>
 
+
+
+
+   <br><br><br><br><br><br>
+
     <div class="section section-properties">
       <div class="container">
+        <div class="row">
+          <div class="col-3">
+
+
+            {% for i in prop %}
+            <div class="property-item">
+              <a href="property-single.html" class="img">
+                <img src="{{i.image.url}}" alt="Image" class="img-fluid" />
+              </a>
+
+              <div class="property-content">
+                <div class="price mb-2"><span>₹{{i.expected_price}}</span></div>
+                <div>
+                  <span class="d-block mb-2 text-black-50"
+                    >{{i.furnished_status}}, {{i.name_of_property}}</span
+                  >
+                  <span class="city d-block mb-3">{{i.name_of_property}}</span>
+
+                  <div class="specs d-flex mb-4">
+                    <span class="d-block d-flex align-items-center me-3">
+                      <span class="icon-bed me-2"></span>
+                      <span class="caption">{{i.number_of_bedrooms}}</span>
+                    </span>
+                    <span class="d-block d-flex align-items-center">
+                      <span class="icon-bath me-2"></span>
+                      <span class="caption">{{i.number_of_bathroom}}</span>
+                    </span>
+                  </div>
+
+                  <a
+                    href="property-single.html"
+                    class="btn btn-primary py-2 px-3"
+                    >See details</a
+                  >
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+
+
+
+
+
+
+          </div>
+
+        </div> 
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <div class="property-item mb-30">

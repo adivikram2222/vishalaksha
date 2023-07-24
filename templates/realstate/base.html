@@ -55,10 +55,10 @@
             >
               <li class="active"><a href="{% url 'index' %}">Home</a></li>
               <li class="has-children">
-                <a href="{% url 'properties' %}">Properties</a>
-                <!-- <ul class="dropdown">
-                  <li><a href="#">Buy Property</a></li>
-                  <li><a href="#">Sell Property</a></li>
+                <a href="">Properties</a>
+                <ul class="dropdown">
+                  <li><a href="{% url 'properties' %}">properties</a></li>
+                  <li><a href="{% url 'property' %}">property</a></li>
                   <li class="has-children">
                     <a href="#">Dropdown</a>
                     <ul class="dropdown">
@@ -67,7 +67,7 @@
                       <li><a href="#">Sub Menu Three</a></li>
                     </ul>
                   </li>
-                </ul> -->
+                </ul>
               </li>
               <li><a href="{% url 'services' %}">Services</a></li>
               <li><a href="{% url 'about' %}">About</a></li>
