@@ -1,5 +1,7 @@
 from tkinter import CASCADE
 from django.db import models
+from django.utils.text import slugify
+from django.db.models.signals import pre_save
 
 
 # Create your models here.
@@ -37,8 +39,41 @@ class Property(models.Model):
     expected_price = models.IntegerField()
     maintanance_charge_per_month = models.IntegerField(default=0)
     image = models.ImageField(upload_to='media')
-    slug = models.SlugField()
+    slug = models.SlugField(blank=True, null=True)
 
 
     def __str__(self): 
         return self.name_of_property
+    def get_absolute_urls(self):
+        from django.urls import reverse
+        return reverse("", kwargs={'slug': self.slug})
+    
+
+    # def create_slug(instance, new_slug=None):
+    #     slug = slugify(instance.name_of_property)
+    #     if new_slug is not None:
+    #         slug=new_slug
+    #     qs = Property.objects.filter(slug=slug).order_by('-id')
+    #     exists = qs.exists()
+    #     if exists:
+    #         new_slug ="%s-%s" % (slug, qs.first().id)
+    #         return create_slug(instance, new_slug = new_slug)
+    #     return slug
+    
+    def create_slug(instance, new_slug=None):
+        slug = slugify(instance.name_of_property)
+        if new_slug is not None:
+            slug = new_slug
+        qs = Property.objects.filter(slug=slug).order_by('-id')
+        exists = qs.exists()
+        if exists:
+            new_slug = "%s-%s" % (slug, qs.first().id)
+            return create_slug(instance, new_slug=new_slug)
+        return slug
+
+
+    def pre_save_post_receiver(sender, instance, *args, **kwargs):
+        if not instance.slug:
+            instance.slug = create_slug(instance)
+    pre_save.connect(pre_save_post_receiver,property)
+                   

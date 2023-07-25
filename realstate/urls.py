@@ -56,7 +56,7 @@ urlpatterns = [
     path('services', realviews.services, name='services'),
     path('properties', realviews.properties, name='properties'),
     path('property', realviews.property, name='property'),
-    # path('property_details/<str:pID>/', realviews.property, name='property_details')
+    path('property_details/<slug:slug>/', realviews.property, name='property_details')
     
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
