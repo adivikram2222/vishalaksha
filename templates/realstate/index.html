@@ -69,18 +69,21 @@
               <div class="property-slider">
                 {% for i in prop %}
                 <div class="property-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                  <a href="property-single.html" class="img">
+                  <a href="{{i.get_absolute_urls}}" class="img">
                     <img src="{{i.image.url}}" alt="Image" class="img-fluid" />
                   </a>
 
                   <div class="property-content">
+                    <a href="{{i.get_absolute_urls}}" >
                     <div class="price mb-2"><span>₹{{i.expected_price}}</span></div>
+                    </a>
                     <div>
                       <span class="d-block mb-2 text-black-50"
                         >{{i.furnished_status}}, {{i.name_of_property}}</span
                       >
+                      <a href="{{i.get_absolute_urls}}" >
                       <span class="city d-block mb-3">{{i.name_of_property}}</span>
-
+                       </a>
                       <div class="specs d-flex mb-4">
                         <span class="d-block d-flex align-items-center me-3">
                           <span class="icon-bed me-2"></span>
@@ -93,7 +96,7 @@
                       </div>
 
                       <a
-                        href="property-single.html"
+                        href="{{i.get_absolute_urls}}"
                         class="btn btn-primary py-2 px-3"
                         >See details</a
                       >

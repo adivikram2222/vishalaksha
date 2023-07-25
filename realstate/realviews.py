@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Category,Property
 
 # Create your views here.
@@ -28,5 +28,19 @@ def properties(request):
        
     }
     return render (request,'realstate/properties.html',contaxt)
-def property(request):
-    return render (request,'realstate/property-single.html')
+def property(request,slug):
+    category = Category.objects.all()
+    property = Property.objects.all()
+    property = Property.objects.filter()
+    if property.exists():
+        property = property.first()
+    else:
+        return redirect('404')
+    contaxt = {
+        'pro':property,
+        'prop':property,
+        'cat':category
+         
+       
+    }
+    return render (request,'realstate/property-single.html',contaxt)
