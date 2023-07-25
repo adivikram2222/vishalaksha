@@ -7,7 +7,10 @@
       style="background-image: url('/static/real/images/hero_bg_3.jpg')"
     >
       <div class="container">
+        {% for i in pro %}
         <div class="row justify-content-center align-items-center">
+
+          
           <div class="col-lg-9 text-center mt-5">
             <h1 class="heading" data-aos="fade-up">
               5232 California AVE. 21BC
@@ -32,6 +35,7 @@
               </ol>
             </nav>
           </div>
+          
         </div>
       </div>
     </div>
@@ -42,16 +46,25 @@
           <div class="col-lg-7">
             <div class="img-property-slide-wrap">
               <div class="img-property-slide">
-                <img src="{% static 'real/images/img_1.jpg' %}" alt="Image" class="img-fluid" />
+                <img src="{{i.image.url}}" alt="Image" class="img-fluid" />
                 <img src="{% static 'real/images/img_2.jpg' %}" alt="Image" class="img-fluid" />
                 <img src="{% static 'real/images/img_3.jpg' %}" alt="Image" class="img-fluid" />
               </div>
             </div>
           </div>
           <div class="col-lg-4">
-            <h2 class="heading text-primary">5232 California Ave. 21BC</h2>
-            <p class="meta">California, United States</p>
+            <h2 class="heading text-primary">{{i.name_of_property}}</h2>
+            <p class="meta">{{i.name_of_property}}</p>
             <p class="text-black-50">
+
+              {{i.total_flat_in_property}}{{i.city}}{{i.name_of_property}}{{i.total_floor}}
+              {{i.floor_number}}
+              {{i.furnished_status}}{{i.number_of_bathroom}}{{i.super_area}}
+              {{i.build_up_area }}{{i.carpet_area}}{{i.transaction_type }}{{i.available_from}}{{i.expected_price}}
+              {{i.maintanance_charge_per_month}}
+
+
+              <br><br><br><br><br><br>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
               laborum quo quos omnis sed magnam id, ducimus saepe, debitis error
               earum, iste dicta odio est sint dolorem magni animi tenetur.
@@ -98,6 +111,6 @@
         </div>
       </div>
     </div>
-
+    {% endfor %}
     
     {% endblock content %}

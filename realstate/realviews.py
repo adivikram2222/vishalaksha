@@ -31,13 +31,13 @@ def properties(request):
 def property(request,slug):
     category = Category.objects.all()
     property = Property.objects.all()
-    property = Property.objects.filter()
+    properte = Property.objects.filter()
     if property.exists():
         property = property.first()
     else:
         return redirect('404')
     contaxt = {
-        'pro':property,
+        'pro':properte,
         'prop':property,
         'cat':category
          
