@@ -47,26 +47,26 @@
             <div class="img-property-slide-wrap">
               <div class="img-property-slide">
                 <img src="{{i.image.url}}" alt="Image" class="img-fluid" />
-                <img src="{% static 'real/images/img_2.jpg' %}" alt="Image" class="img-fluid" />
-                <img src="{% static 'real/images/img_3.jpg' %}" alt="Image" class="img-fluid" />
+                <img src="{{i.image2.url}}" alt="Image" class="img-fluid" />
+                <img src="{{i.image3.url}}" alt="Image" class="img-fluid" />
               </div>
             </div>
           </div>
           <div class="col-lg-4">
             <h2 class="heading text-primary">{{i.name_of_property}}</h2>
             <p class="meta">{{i.name_of_property}}</p>
-            <p class="text-black-50">
+           <!-- <p class="text-black-50">
 
-              <!-- {{i.total_flat_in_property}}{{i.city}}{{i.name_of_property}}{{i.total_floor}}
+               {{i.total_flat_in_property}}{{i.city}}{{i.name_of_property}}{{i.total_floor}}
               {{i.floor_number}}
               {{i.furnished_status}}{{i.number_of_bathroom}}{{i.super_area}}
               {{i.build_up_area }}{{i.carpet_area}}{{i.transaction_type }}{{i.available_from}}{{i.expected_price}}
-              {{i.maintanance_charge_per_month}} -->
+              {{i.maintanance_charge_per_month}}
 
 
               <br><br><br><br><br><br>
               
-            </p>
+            </p> -->
             <p class="text-black-50">
               
 The expected price of Dashita Apartment is ₹{{i.expected_price}} per square ft. 

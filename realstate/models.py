@@ -39,6 +39,8 @@ class Property(models.Model):
     expected_price = models.IntegerField()
     maintanance_charge_per_month = models.IntegerField(default=0)
     image = models.ImageField(upload_to='media')
+    image2 = models.ImageField(upload_to='media', null=True)
+    image3 = models.ImageField(upload_to='media', null=True)
     slug = models.SlugField(blank=True, null=True, default = '')
 
 
