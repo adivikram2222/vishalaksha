@@ -2,116 +2,77 @@
 {% load static %}
 {% block content %}
 
-    <div
-      class="hero page-inner overlay"
-      style="background-image: url('/static/real/images/hero_bg_3.jpg')"
-    >
-      <div class="container">
-        {% for i in pro %}
-        <div class="row justify-content-center align-items-center">
+<div class="hero page-inner overlay" style="background-image: url('/static/real/images/hero_bg_3.jpg')">
+  <div class="container">
+   
+    <div class="row justify-content-center align-items-center">
 
-          
-          <div class="col-lg-9 text-center mt-5">
-            <h1 class="heading" data-aos="fade-up">
+
+      <div class="col-lg-9 text-center mt-5">
+        <h1 class="heading" data-aos="fade-up">
+          5232 California AVE. 21BC
+        </h1>
+
+        <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+          <ol class="breadcrumb text-center justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">
+              <a href="properties.html">Properties</a>
+            </li>
+            <li class="breadcrumb-item active text-white-50" aria-current="page">
               5232 California AVE. 21BC
-            </h1>
-
-            <nav
-              aria-label="breadcrumb"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <ol class="breadcrumb text-center justify-content-center">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item">
-                  <a href="properties.html">Properties</a>
-                </li>
-                <li
-                  class="breadcrumb-item active text-white-50"
-                  aria-current="page"
-                >
-                  5232 California AVE. 21BC
-                </li>
-              </ol>
-            </nav>
-          </div>
-          
-        </div>
+            </li>
+          </ol>
+        </nav>
       </div>
+
     </div>
-
-    <div class="section">
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-7">
-            <div class="img-property-slide-wrap">
-              <div class="img-property-slide">
-                <img src="{{i.image.url}}" alt="Image" class="img-fluid" />
-                <img src="{{i.image2.url}}" alt="Image" class="img-fluid" />
-                <img src="{{i.image3.url}}" alt="Image" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <h2 class="heading text-primary">{{i.name_of_property}}</h2>
-            <p class="meta">{{i.name_of_property}}</p>
-           <!-- <p class="text-black-50">
-
-               {{i.total_flat_in_property}}{{i.city}}{{i.name_of_property}}{{i.total_floor}}
-              {{i.floor_number}}
-              {{i.furnished_status}}{{i.number_of_bathroom}}{{i.super_area}}
-              {{i.build_up_area }}{{i.carpet_area}}{{i.transaction_type }}{{i.available_from}}{{i.expected_price}}
-              {{i.maintanance_charge_per_month}}
+  </div>
+</div>
 
 
-              <br><br><br><br><br><br>
-              
-            </p> -->
-            <p class="text-black-50">
-              
-The expected price of Dashita Apartment is ₹{{i.expected_price}} per square ft. 
-It is a {{i.transaction_type }} property with a total of {{i.total_flat_in_property}} flats in {{i.city}}, offering {{i.number_of_bedrooms}} bedrooms and {{i.number_of_bathroom}} bathrooms. 
-The property is {{i.transaction_type }}, and it has a super area of {{i.super_area}} sq. ft., build-up area of {{i.build_up_area }} sq. ft.,
- and a carpet area of {{i.carpet_area}} sq. ft. The maintenance charge per month is {{i.maintanance_charge_per_month}}  the provided 
- information.
- The property is available for purchase from the specified date, {{i.available_from}}.
-            </p>
 
-            <div class="d-block agent-box p-5">
-              <div class="img mb-4">
-                <img
-                  src="{% static 'real/images/person_2-min.jpg' %}"
-                  alt="Image"
-                  class="img-fluid"
-                />
-              </div>
-              <div class="text">
-                <h3 class="mb-0">Alicia Huston</h3>
-                <div class="meta mb-3">Real Estate</div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Ratione laborum quo quos omnis sed magnam id ducimus saepe
-                </p>
-                <ul class="list-unstyled social dark-hover d-flex">
-                  <li class="me-1">
-                    <a href="#"><span class="icon-instagram"></span></a>
-                  </li>
-                  <li class="me-1">
-                    <a href="#"><span class="icon-twitter"></span></a>
-                  </li>
-                  <li class="me-1">
-                    <a href="#"><span class="icon-facebook"></span></a>
-                  </li>
-                  <li class="me-1">
-                    <a href="#"><span class="icon-linkedin"></span></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
+
+<div class="section">
+  
+  <div class="container">
     
-    {% endblock content %}
+    <div class="row justify-content-between">
+      
+      <div class="col-lg-7">
+        <div class="img-property-slide-wrap">
+          <div class="img-property-slide">
+            <img src="{{i.image.url}}" alt="Image" class="img-fluid" />
+            <img src="{{i.image2.url}}" alt="Image" class="img-fluid" />
+            <img src="{{i.image3.url}}" alt="Image" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <h2 class="heading text-primary">{{i.name_of_property}}</h2>
+        <p class="meta">{{i.name_of_property}}</p>
+        
+        <p class="text-black-50">
+
+          The expected price of Dashita Apartment is ₹{{i.expected_price}} per square ft.
+          It is a {{i.transaction_type }} property with a total of {{i.total_flat_in_property}} flats in {{i.city}},
+          offering {{i.number_of_bedrooms}} bedrooms and {{i.number_of_bathroom}} bathrooms.
+          The property is {{i.transaction_type }}, and it has a super area of {{i.super_area}} sq. ft., build-up area of
+          {{i.build_up_area }} sq. ft.,
+          and a carpet area of {{i.carpet_area}} sq. ft. The maintenance charge per month is
+          {{i.maintanance_charge_per_month}} the provided
+          information.
+          The property is available for purchase from the specified date, {{i.available_from}}.
+        </p>
+
+        
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</div>
+
+
+{% endblock content %}
