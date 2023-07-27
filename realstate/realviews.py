@@ -70,3 +70,5 @@ def property(request,slug):
     return render (request,'realstate/property-single.html',contaxt)
 def search(request):
     return render (request,'realstate/search.html')
+def blog(request):
+    return render (request,'realstate/blog.html')

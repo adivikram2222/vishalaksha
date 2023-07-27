@@ -58,6 +58,7 @@ urlpatterns = [
     path('property', realviews.property, name='property'),
     path('property_details/<slug:slug>/', realviews.property, name='property_details'),
     path('search', realviews.search, name='search'),
+    path('blog_details/<slug:slug>/', realviews.blog, name='blog'),
     
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 

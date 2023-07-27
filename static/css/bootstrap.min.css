@@ -6890,9 +6890,9 @@ fieldset:disabled .btn {
 .rounded-3 {
   border-radius: 0px !important;
 }
-.rounded-circle {
+/* .rounded-circle {
   border-radius: 50% !important;
-}
+} 
 .rounded-pill {
   border-radius: 50rem !important;
 }
@@ -6911,7 +6911,7 @@ fieldset:disabled .btn {
 .rounded-start {
   border-bottom-left-radius: 0px !important;
   border-top-left-radius: 0px !important;
-}
+}*/
 .visible {
   visibility: visible !important;
 }
