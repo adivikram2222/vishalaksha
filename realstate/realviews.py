@@ -8,8 +8,7 @@ def index(request):
     property = Property.objects.all()
     contaxt = {
         'prop':property,
-         'cat':category
-       
+         'cat':category    
     }
     
 
@@ -56,6 +55,7 @@ def properties(request):
 def property(request,slug):
     category = Category.objects.all()
     property = Property.objects.all()
+    property_details = Property.objects.get(slug=slug)
     properte = Property.objects.filter()
     if property.exists():
         property = property.first()
@@ -64,8 +64,9 @@ def property(request,slug):
     contaxt = {
         'pro':properte,
         'prop':property,
-        'cat':category
-         
-       
+        'cat':category,
+        'propslug': property_details,  
     }
     return render (request,'realstate/property-single.html',contaxt)
+def search(request):
+    return render (request,'realstate/search.html')

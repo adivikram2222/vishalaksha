@@ -9193,7 +9193,7 @@ textarea.form-control-lg {
 
 .logo {
   font-size: 24px;
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: #005555 !important;
   font-weight: 500; }
   .logo:hover {
     color: #fff !important; }
@@ -9215,15 +9215,15 @@ textarea.form-control-lg {
       display: inline-block; }
       .site-nav .site-navigation .site-menu > li > a {
         font-size: 14px;
-        padding: 10px 15px;
+        padding: 15px 15px;
         display: inline-block;
         text-decoration: none !important;
-        color: rgba(255, 255, 255, 0.5); }
+        color: #005555; }
         .site-nav .site-navigation .site-menu > li > a:hover {
           color: #fff; }
       .site-nav .site-navigation .site-menu > li.cta-button a {
         padding: 6px 20px;
-        border: 2px solid rgba(0, 0, 0, 0.1);
+        border: 2px solid #005555;
         color: #000;
         border-radius: 30px; }
         .site-nav .site-navigation .site-menu > li.cta-button a:hover {
@@ -9231,7 +9231,7 @@ textarea.form-control-lg {
           background: #00204a;
           border-color: #00204a; }
       .site-nav .site-navigation .site-menu > li.active > a {
-        color: #fff; }
+        color: #005555; }
     .site-nav .site-navigation .site-menu .has-children {
       position: relative; }
       .site-nav .site-navigation .site-menu .has-children > a {
@@ -9653,8 +9653,8 @@ textarea {
   transform: translate(-50%, -50%); }
 
 .menu-bg-wrap {
-  background-color: #005555;
-  padding: 20px 30px;
+  background-color: #ffffff;
+  padding: 10px 30px;
   position: relative;
   float: left;
   width: 100%;

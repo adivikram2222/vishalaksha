@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<div class="hero page-inner overlay" style="background-image: url('images/hero_bg_1.jpg')">
+<div class="hero page-inner overlay" style="background-image: url('/static/real/images/hero_bg_1.jpg')">
   <div class="container">
     <div class="row justify-content-center align-items-center">
       <div class="col-lg-9 text-center mt-5">
@@ -24,13 +24,21 @@
 
 
 <!-- new cart -->
+
 <div class="section">
   <div class="container">
+    <div class="row mb-5 align-items-center">
+      <div class="col-lg-6 text-center mx-auto">
+        <h2 class="font-weight-bold text-primary heading">
+          All Properties
+        </h2>
+      </div>
+    </div>
     <div class="row row-cols-1 row-cols-md-4 g-4">
       {% for i in prop %}
       <div class="col" class="property-item" >
         <div class="card h-100">
-          <a href="{{i.get_absolute_urls}}l" class="img">
+          <a href="{{i.get_absolute_urls}}" class="img">
             <img src="{{i.image.url}}" alt="Image" class="img-fluid"/>
           </a>
           <div class="property-content" style="padding: 20px;">
@@ -73,7 +81,7 @@
 
 
 
-<!-- property -->
+<!-- property 
 <div class="section">
   <div class="container">
     <div class="row">
@@ -110,10 +118,10 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 <!-- endproperty -->
 
-<!-- property -->
+<!-- property 
 <div class="section">
   <div class="container">
     <div class="row mb-5 align-items-center">
@@ -388,13 +396,13 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 <!-- endproperty -->
 
 
 
 <br><br><br><br><br><br>
-<!-- property -->
+<!-- property 
  <div class="section section-properties">
   <div class="container">
     <div class="row">
@@ -717,7 +725,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 
 <!-- endproperty -->
 
