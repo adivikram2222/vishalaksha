@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import Category,Property
+from .models import Category,Property,Blog
 from django.core.mail import send_mail
 
 # Create your views here.
@@ -71,4 +71,28 @@ def property(request,slug):
 def search(request):
     return render (request,'realstate/search.html')
 def blog(request):
-    return render (request,'realstate/blog.html')
+    category = Category.objects.all()
+    property = Blog.objects.all()
+    contaxt = {
+        'blog':property,
+         'cat':category
+       
+    }
+    
+    return render (request,'realstate/blog.html',contaxt)
+def blogdetails(request,slug):
+    category = Category.objects.all()
+    property = Blog.objects.all()
+    property_details = Blog.objects.get(slug=slug)
+    properte = Blog.objects.filter()
+    if property.exists():
+        property = property.first()
+    else:
+        return redirect('404')
+    contaxt = {
+        'pro':properte,
+        'prop':property,
+        'cat':category,
+        'propslug': property_details,  
+    }
+    return render (request,'realstate/blogdetails.html',contaxt)

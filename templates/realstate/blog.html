@@ -4,79 +4,71 @@
 
 <!-- Page Header Start -->
 <div class="hero page-inner overlay" style="background-image: url('/static/real/images/hero_bg_1.jpg')">
-    <div class="container">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-lg-9 text-center mt-5">
-          <h1 class="heading" data-aos="fade-up">Blog</h1>
-  
-          <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
-            <ol class="breadcrumb text-center justify-content-center">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item active text-white-50" aria-current="page">
-                blog
-              </li>
-            </ol>
-          </nav>
-        </div>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-9 text-center mt-5">
+        <h1 class="heading" data-aos="fade-up">Blog</h1>
+
+        <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+          <ol class="breadcrumb text-center justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active text-white-50" aria-current="page">
+              blog
+            </li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
+</div>
 <!-- Page Header End -->
 
 
-
 <div class="section">
-    <div class="container">
-      <div class="row mb-5 align-items-center">
-        <div class="col-lg-6 text-center mx-auto">
-          <h2 class="font-weight-bold text-primary heading">
-            All Properties
-          </h2>
-        </div>
-      </div>
-      <div class="row row-cols-1 row-cols-md-4 g-4">
-        {% for i in prop %}
+  <div class="container">
+  
+    <div class="row"> 
+       {% for i in blog %}
+      <div class="col-3">
         <div class="col" class="property-item" >
           <div class="card h-100">
             <a href="{{i.get_absolute_urls}}" class="img">
-              <img src="{{i.image.url}}" alt="Image" class="img-fluid"/>
+              <img src="{{i.image.url}}" alt="Image" class="img-fluid" style="height: 210px; width: 260px;"/>
             </a>
-            <div class="property-content" style="padding: 20px;">
-              <a href="{{i.get_absolute_urls}}" >
-                <div class="price mb-2"><span>₹{{i.expected_price}}</span></div>
-                </a>
-                <div>
-                  <span class="d-block mb-2 text-black-50"
-                    >{{i.furnished_status}}, {{i.name_of_property}}</span
-                  >
-                  <a href="{{i.get_absolute_urls}}" >
-                  <span class="city d-block mb-3">{{i.name_of_property}}</span>
-                   </a>
-                  <div class="specs d-flex mb-4">
-                    <span class="d-block d-flex align-items-center me-3">
-                      <span class="icon-bed me-2"></span>
-                      <span class="caption">{{i.number_of_bedrooms}}</span>
-                    </span>
-                    <span class="d-block d-flex align-items-center">
-                      <span class="icon-bath me-2"></span>
-                      <span class="caption">{{i.number_of_bathroom}}</span>
-                    </span>
-                  </div>
-  
-                  <a
-                    href="{{i.get_absolute_urls}}"
-                    class="btn btn-primary py-2 px-3"
-                    >See details</a
-                  >
-                </div>
+            <div class="card-body">
+              <a href="{{i.get_absolute_urls}}">
+                <h5 class="card-title" style="color: #005555;">{{i.title}}</h5>
+              </a>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p><a href="#" style="color: #005555;">Read more...</a>
             </div>
           </div>
         </div>
-        {% endfor %}
-        
-      </div>
+
+
+      
+
+        <!-- <div class="card" style="width: 18rem;">
+          <img src="{% static 'real/images/hero_bg_1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <a href="{{i.get_absolute_urls}}">
+              <h5 class="card-title" style="color: #005555;">{{i.title}}</h5>
+            </a>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p><a href="#" style="color: #005555;">Read more...</a>
+          </div>
+        </div> -->
+      </div> 
+      {% endfor %}
     </div>
+
+
+   
+
+
   </div>
+</div>
+
 
 
 

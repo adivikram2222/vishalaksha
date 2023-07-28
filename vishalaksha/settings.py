@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'home',
     'realstate',
     'tech',
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

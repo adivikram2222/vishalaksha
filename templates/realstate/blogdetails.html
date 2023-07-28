@@ -1,0 +1,76 @@
+{% extends 'realstate/base.html' %}
+{% load static %}
+<script>window.CKEDITOR_BASEPATH = '/my_static/ckeditor/ckeditor/';</script>
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="hero page-inner overlay" style="background-image: url('/static/real/images/hero_bg_1.jpg')">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-9 text-center mt-5">
+                <h1 class="heading" data-aos="fade-up">Blog Details</h1>
+
+                <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                    <ol class="breadcrumb text-center justify-content-center">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active text-white-50" aria-current="page">
+                            blog details
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<div class="section">
+    <div class="container">
+        <a href="{{i.get_absolute_urls}}" class="img">
+            <img src="{% static 'real/images/hero_bg_1.jpg' %}" class="card-img-top" alt="..." style="height: 400px;">
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">{{propslug.title}}</h5>
+
+            <p class="card-text"><small class="text-body-secondary">{{propslug.date}}</small></p>
+            {{propslug.description}}<p class="card-text"></p>
+
+            {{propslug.description}}
+            
+        </div>
+        <div class="card mb-3">
+           
+        </div>
+    </div>
+</div>
+
+<!-- <div class="card h-100">
+    <a href="{{i.get_absolute_urls}}" class="img">
+        <img src="{% static 'real/images/hero_bg_1.jpg' %}" alt="Image" class="img-fluid" />
+    </a>
+    <div class="card-body">
+        <a href="{{i.get_absolute_urls}}">
+            <h5 class="card-title" style="color: #005555;">{{propslug.title}}</h5>
+        </a>
+        <p class="card-text">{{propslug.description}}Some quick example text to build on the card title and make up the
+            bulk of the card's
+            content.</p>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

@@ -2,6 +2,9 @@ from tkinter import CASCADE
 from django.db import models
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
+from django.urls import reverse
+from ckeditor.fields import RichTextField 
+
 
 
 # Create your models here.
@@ -49,12 +52,12 @@ class Property(models.Model):
         return self.name_of_property
     
     def get_absolute_urls(self):
-        from django.urls import reverse
+        
         return reverse("property_details", kwargs={'slug': self.slug})
 
     
 def create_slug(instance, new_slug=None):
-    slug = slugify(instance.name_of_property)
+    slug = slugify(instance.title)
     if new_slug is not None:
         slug = new_slug
     qs = Property.objects.filter(slug=slug).order_by('-id')
@@ -69,34 +72,39 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = create_slug(instance)
 pre_save.connect(pre_save_post_receiver,Property)
-                   
-# class Blog(models.Model):
-#     title = models.CharField(max_length=100)
-#     date = models.CharField(max_length=100)
-#     description = models.CharField(max_length=500)
-#     slug = models.SlugField()
+# 
+# 
+# 
+# 
+# 
+#  Blog                  
+class Blog(models.Model):
+    image = models.ImageField(upload_to='realestate', null=True)
+    title = models.CharField(max_length=100)
+    date = models.DateTimeField()
+    description = models.TextField(null=True)
+    description1 = RichTextField(null=True)
+    slug = models.SlugField(blank=True)
     
 
-#     def __str__(self): 
-#         return self.title
-#     def get_absolute_urls(self):
-#         from django.urls import reverse
-#         return reverse("blog_details", kwargs={'slug': self.slug})
+    def __str__(self): 
+        return self.title
+    def get_absolute_urls(self):
+        
+        return reverse("blog_details", kwargs={'slug': self.slug})
+    
 
-
-# def create_slug(instance, new_slug=None):
-#     slug = slugify(instance.title)
-#     if new_slug is not None:
-#         slug = new_slug
-#     qs = Blog.objects.filter(slug=slug).order_by('-id')
-#     exists = qs.exists()
-#     if exists:
-#         new_slug = "%s-%s" % (slug, qs.first().id)
-#         return create_slug(instance, new_slug=new_slug)
-#     return slug
-
-
-# def pre_save_post_receiver(sender, instance, *args, **kwargs):
-#     if not instance.slug:
-#         instance.slug = create_slug(instance)
-# pre_save.connect(pre_save_post_receiver,Blog)    
+def create_slug(instance, new_slug=None):
+    slug = slugify(instance.title)
+    if new_slug is not None:
+        slug = new_slug
+    qs = Blog.objects.filter(slug=slug).order_by('-id')
+    exists = qs.exists()
+    if exists:
+        new_slug = "%s-%s" % (slug, qs.first().id)
+        return create_slug(instance, new_slug=new_slug)
+    return slug    
+def pre_save_post_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = create_slug(instance)
+pre_save.connect(pre_save_post_receiver,Blog)
