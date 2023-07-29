@@ -60,11 +60,11 @@
               class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
             >
               <li class="active"><a href="{% url 'realstate' %}">Home</a></li>
-              <!--<li class="has-children">
+              <li class="has-children">
                 
-                <ul class="dropdown">
+                <!-- <ul class="dropdown">
                   <li><a href="">properties</a></li>
-                   <li><a href="{% url 'property' %}">property</a></li>
+                   
                   <li class="has-children">
                     <a href="#">Dropdown</a>
                     <ul class="dropdown">
@@ -73,9 +73,21 @@
                       <li><a href="#">Sub Menu Three</a></li>
                     </ul>
                   </li> 
+                </ul> -->
+              
+              </li>
+
+              <li class="has-children">
+                <a href="#">Properties</a>
+                <ul class="dropdown">
+
+                  {% for i in cat %}
+                  <li><a href="/properties/?categories={{i.id}}">{{i.name}}</a></li>
+                  {% endfor %}
+                  
                 </ul>
-              </li>-->
-              <li><a href="{% url 'properties' %}">Properties</a></li>
+              </li> 
+              <!-- <li><a href="{% url 'properties' %}">Properties</a></li> -->
               <li><a href="{% url 'services' %}">Services</a></li>
               <li><a href="{% url 'blog' %}">Blog</a></li>
               <li><a href="{% url 'about' %}">About</a></li>
@@ -111,13 +123,12 @@
             <div class="col-lg-4">
               <div class="widget">
                 <h3>Contact</h3>
-                <address>43 Raymouth Rd. Baltemoer, London 3910</address>
+                <address>401, Shanti Heritage, Rukanpura,<br> Bailey road, Patna, 800014</address>
                 <ul class="list-unstyled links">
-                  <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-                  <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-                  <li>
-                    <a href="mailto:info@mydomain.com">info@mydomain.com</a>
-                  </li>
+                  <li><i class="icon-phone">  </i><a href="tel://11234567890">+91 8809855528</a></li>
+                  
+                  <!-- <li><a href="tel://11234567890">+1(123)-456-7890</a></li> -->
+                  <li style="display: flex;"><i class="icon-envelope">  </i>  <a href="mailto:info@mydomain.com">info@vishalaksha.com</a></li>
                 </ul>
               </div>
               <!-- /.widget -->
@@ -127,21 +138,19 @@
               <div class="widget">
                 <h3>Sources</h3>
                 <ul class="list-unstyled float-start links">
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Vision</a></li>
-                  <li><a href="#">Mission</a></li>
-                  <li><a href="#">Terms</a></li>
-                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact Us</a></li>
                 </ul>
-                <ul class="list-unstyled float-start links">
+                <!-- <ul class="list-unstyled float-start links">
                   <li><a href="#">Partners</a></li>
                   <li><a href="#">Business</a></li>
                   <li><a href="#">Careers</a></li>
                   <li><a href="#">Blog</a></li>
                   <li><a href="#">FAQ</a></li>
                   <li><a href="#">Creative</a></li>
-                </ul>
+                </ul> -->
               </div>
               <!-- /.widget -->
             </div>

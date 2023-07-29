@@ -6,6 +6,13 @@ from django.core.mail import send_mail
 def index(request):
     category = Category.objects.all()
     property = Property.objects.all()
+    #property = Property.objects.filter(status='Publish')
+    cat_id = request.GET.get('categories')
+    # if cat_id:
+    #     property = property.objects.filter(catrgory=cat_id)
+    # else:
+    #     property = Property.objects.filter(status='Publish')
+
     contaxt = {
         'prop':property,
          'cat':category    
@@ -68,8 +75,7 @@ def property(request,slug):
         'propslug': property_details,  
     }
     return render (request,'realstate/property-single.html',contaxt)
-def search(request):
-    return render (request,'realstate/search.html')
+
 def blog(request):
     category = Category.objects.all()
     property = Blog.objects.all()
@@ -96,3 +102,37 @@ def blogdetails(request,slug):
         'propslug': property_details,  
     }
     return render (request,'realstate/blogdetails.html',contaxt)
+# def search(request):
+#     query = request.GET.get('query')
+#     property = Property.objects.filter(name__icontains=query)
+
+#     contaxt={ 
+#         'prop': property,
+
+
+#     }
+    
+
+#     return render (request,'realstate/search.html', contaxt)
+
+
+
+def search(request):
+    """ search function  """
+    if request.method == "POST":
+        query_name = request.POST.get('query')
+        if query_name:
+            results = Property.objects.filter(name_of_property=query_name)
+            results2 = Property.objects.filter(city=query_name)
+            results3 = Property.objects.filter(furnished_status=query_name)
+            results4 = Property.objects.filter(transaction_type=query_name)
+            contaxt={
+                "results":results,
+                "results2":results2,
+                "results3":results3,
+                "results4":results4,
+
+                }
+            return render(request, 'realstate/search.html',contaxt)
+
+    return render(request, 'realstate/search.html')

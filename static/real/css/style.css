@@ -10330,7 +10330,8 @@ nav[aria-label="breadcrumb"] li:before {
     color: #777;
     position: relative;
     display: inline-block;
-    text-decoration: underline; }
+    /* text-decoration: underline;  */
+  }
     .site-footer a:hover {
       color: #000;
       text-decoration: none; }

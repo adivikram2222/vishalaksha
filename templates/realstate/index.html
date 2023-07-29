@@ -24,12 +24,8 @@
               <h1 class="heading" data-aos="fade-up">
                 Easiest way to find your dream home
               </h1>
-              <form
-                action="search" method="get"
-                class="narrow-w form-search d-flex align-items-stretch mb-3"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
+              <form action="{% url 'search' %}" method="POST" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+               {% csrf_token %}
                 <input
                   type="text"
                   class="form-control px-4"
@@ -37,7 +33,7 @@
                   name="query"
                   id="query"
                 />
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary" value="search">Search</button>
               </form>
             </div>
           </div>
@@ -457,130 +453,7 @@
     </section>
 
 
-    <!-- Testimonial Start -->
-
-    <div class="section sec-testimonials">
-      <div class="container">
-        <div class="row mb-5 align-items-center">
-          <div class="col-md-6">
-            <h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">
-              Customer Says
-            </h2>
-          </div>
-          <div class="col-md-6 text-md-end">
-            <div id="testimonial-nav">
-              <span class="prev" data-controls="prev">Prev</span>
-
-              <span class="next" data-controls="next">Next</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4"></div>
-        </div>
-        <div class="testimonial-slider-wrap">
-          <div class="testimonial-slider">
-            <div class="item">
-              <div class="testimonial">
-                <img
-                  src="{% static 'real/images/per1.jpg' %}"
-                  alt="Image"
-                  class="img-fluid rounded-circle w-25 mb-4"
-                />
-                <div class="rate">
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                </div>
-                <h3 class="h5 text-primary mb-4">James Smith</h3>
-                <blockquote>
-                  <p>
-                    &ldquo;Excellent service, smooth transaction, and found the perfect home. Highly recommended! Thank you so much&rdquo;
-                  </p>
-                </blockquote>
-                <p class="text-black-50">Designer, Co-founder</p>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="testimonial">
-                <img
-                  src="{% static 'real/images/per2.jpg' %}"
-                  alt="Image"
-                  class="img-fluid rounded-circle w-25 mb-4"
-                />
-                <div class="rate">
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                </div>
-                <h3 class="h5 text-primary mb-4">Mike Houston</h3>
-                <blockquote>
-                  <p>
-                    &ldquo;Prompt response, friendly staff, seamless process. Satisfied with the overall experience. Will recommend to others&rdquo;
-                  </p>
-                </blockquote>
-                <p class="text-black-50">Designer, Co-founder</p>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="testimonial">
-                <img
-                  src="{% static 'real/images/per3.jpg' %}"
-                  alt="Image"
-                  class="img-fluid rounded-circle w-25 mb-4"
-                />
-                <div class="rate">
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                </div>
-                <h3 class="h5 text-primary mb-4">Cameron Webster</h3>
-                <blockquote>
-                  <p>
-                    &ldquo;Outstanding service, exceeded expectations, smooth transaction. Grateful for finding my dream property. Highly recommended agency!&rdquo;
-                  </p>
-                </blockquote>
-                <p class="text-black-50">Designer, Co-founder</p>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="testimonial">
-                <img
-                  src="{% static 'real/images/per4.jpg' %}"
-                  alt="Image"
-                  class="img-fluid rounded-circle w-25 mb-4"
-                />
-                <div class="rate">
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                </div>
-                <h3 class="h5 text-primary mb-4">Dave Smith</h3>
-                <blockquote>
-                  <p>
-                    &ldquo;Efficient, reliable, and professional service. Couldn't be happier with my new home. Thank you&rdquo;
-                  </p>
-                </blockquote>
-                <p class="text-black-50">Designer, Co-founder</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Testimonial End -->
+ 
 
 
     <div class="section section-4 bg-light">
@@ -828,6 +701,131 @@
         </div>
       </div>
     </div>
+
+       <!-- Testimonial Start -->
+
+       <div class="section sec-testimonials">
+        <div class="container">
+          <div class="row mb-5 align-items-center">
+            <div class="col-md-6">
+              <h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">
+                Customer Says
+              </h2>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <div id="testimonial-nav">
+                <span class="prev" data-controls="prev">Prev</span>
+  
+                <span class="next" data-controls="next">Next</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-lg-4"></div>
+          </div>
+          <div class="testimonial-slider-wrap">
+            <div class="testimonial-slider">
+              <div class="item">
+                <div class="testimonial">
+                  <img
+                    src="{% static 'real/images/per1.jpg' %}"
+                    alt="Image"
+                    class="img-fluid rounded-circle w-25 mb-4"
+                  />
+                  <div class="rate">
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                  </div>
+                  <h3 class="h5 text-primary mb-4">James Smith</h3>
+                  <blockquote>
+                    <p>
+                      &ldquo;Excellent service, smooth transaction, and found the perfect home. Highly recommended! Thank you so much&rdquo;
+                    </p>
+                  </blockquote>
+                  <p class="text-black-50">Designer, Co-founder</p>
+                </div>
+              </div>
+  
+              <div class="item">
+                <div class="testimonial">
+                  <img
+                    src="{% static 'real/images/per2.jpg' %}"
+                    alt="Image"
+                    class="img-fluid rounded-circle w-25 mb-4"
+                  />
+                  <div class="rate">
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                  </div>
+                  <h3 class="h5 text-primary mb-4">Mike Houston</h3>
+                  <blockquote>
+                    <p>
+                      &ldquo;Prompt response, friendly staff, seamless process. Satisfied with the overall experience. Will recommend to others&rdquo;
+                    </p>
+                  </blockquote>
+                  <p class="text-black-50">Designer, Co-founder</p>
+                </div>
+              </div>
+  
+              <div class="item">
+                <div class="testimonial">
+                  <img
+                    src="{% static 'real/images/per3.jpg' %}"
+                    alt="Image"
+                    class="img-fluid rounded-circle w-25 mb-4"
+                  />
+                  <div class="rate">
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                  </div>
+                  <h3 class="h5 text-primary mb-4">Cameron Webster</h3>
+                  <blockquote>
+                    <p>
+                      &ldquo;Outstanding service, exceeded expectations, smooth transaction. Grateful for finding my dream property. Highly recommended agency!&rdquo;
+                    </p>
+                  </blockquote>
+                  <p class="text-black-50">Designer, Co-founder</p>
+                </div>
+              </div>
+  
+              <div class="item">
+                <div class="testimonial">
+                  <img
+                    src="{% static 'real/images/per4.jpg' %}"
+                    alt="Image"
+                    class="img-fluid rounded-circle w-25 mb-4"
+                  />
+                  <div class="rate">
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                  </div>
+                  <h3 class="h5 text-primary mb-4">Dave Smith</h3>
+                  <blockquote>
+                    <p>
+                      &ldquo;Efficient, reliable, and professional service. Couldn't be happier with my new home. Thank you&rdquo;
+                    </p>
+                  </blockquote>
+                  <p class="text-black-50">Designer, Co-founder</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial End -->
 
 
     {% endblock content %}
