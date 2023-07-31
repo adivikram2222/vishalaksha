@@ -6,12 +6,12 @@ from django.core.mail import send_mail
 def index(request):
     category = Category.objects.all()
     property = Property.objects.all()
-    #property = Property.objects.filter(status='Publish')
-    cat_id = request.GET.get('categories')
+    # # property = Property.objects.filter(status='Publish')
+    # cat_id = request.GET.get('categories')
     # if cat_id:
-    #     property = property.objects.filter(catrgory=cat_id)
+    #     property = Property.objects.filter(catrgory=cat_id).order_by('-id')
     # else:
-    #     property = Property.objects.filter(status='Publish')
+    #     property = Property.objects.all()
 
     contaxt = {
         'prop':property,
@@ -48,8 +48,14 @@ def contact(request):
 
 
     return render (request,'realstate/contact.html',{})
-def services(request):
-    return render (request,'realstate/services.html')
+# def services(request):
+#     category = Category.objects.all()
+    
+#     contaxt = {
+        
+#          'cat':category
+#     }
+#     return render (request,'realstate/services.html', contaxt)
 def properties(request):
     category = Category.objects.all()
     property = Property.objects.all()
@@ -102,20 +108,6 @@ def blogdetails(request,slug):
         'propslug': property_details,  
     }
     return render (request,'realstate/blogdetails.html',contaxt)
-# def search(request):
-#     query = request.GET.get('query')
-#     property = Property.objects.filter(name__icontains=query)
-
-#     contaxt={ 
-#         'prop': property,
-
-
-#     }
-    
-
-#     return render (request,'realstate/search.html', contaxt)
-
-
 
 def search(request):
     """ search function  """
@@ -136,3 +128,14 @@ def search(request):
             return render(request, 'realstate/search.html',contaxt)
 
     return render(request, 'realstate/search.html')
+def category(request,slug):
+    categary=Category.objects.all()
+    cat=Property.objects.get(slug=slug)
+    products=Property.objects.filter(catrgory=cat)
+    
+
+    context={
+        'pro':products,
+        'cat':categary,
+        }
+    return render(request,'realstate/properties.html', context)   
