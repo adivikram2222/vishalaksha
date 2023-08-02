@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 def index(request):
     category = Category.objects.all()
     property = Property.objects.all()
+    obj=Property.objects.filter().order_by('-id')[:3]
     # # property = Property.objects.filter(status='Publish')
     # cat_id = request.GET.get('categories')
     # if cat_id:
@@ -15,7 +16,8 @@ def index(request):
 
     contaxt = {
         'prop':property,
-         'cat':category    
+         'cat':category,
+         'latest':  obj, 
     }
     
 

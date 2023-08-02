@@ -6,15 +6,15 @@
         <div class="hero-slide">
           <div
             class="img overlay"
-            style="background-image: url('/static/real/images/house/h(4).jpg')"
+            style="background-image: url('/static/real/images/house/h (4).jpg')"
           ></div>
           <div
             class="img overlay"
-            style="background-image: url('/static/real/images/house/h(11).jpg')"
+            style="background-image: url('/static/real/images/house/h (11).jpg')"
           ></div>
           <div
             class="img overlay"
-            style="background-image: url('/static/real/images/house/h(14).jpg')"
+            style="background-image: url('/static/real/images/house/h (14).jpg')"
           ></div>
         </div>
 
@@ -66,9 +66,9 @@
             <div class="property-slider-wrap">
               <div class="property-slider">
                 {% for i in prop %}
-                <div class="property-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                <div class="property-item">
                   <a href="{{i.get_absolute_urls}}" class="img">
-                    <img src="{{i.image.url}}" alt="Image" class="img-fluid" />
+                    <img src="{{i.image.url}}" alt="Image" class="img-fluid" height="235"/>
                   </a>
 
                   <div class="property-content">
@@ -412,9 +412,7 @@
             <div class="box-feature">
               <span class="flaticon-house"></span>
               <h3 class="mb-3">Our Properties</h3>
-              <p>
-                Prime locations, modern amenities, spacious layouts, exceptional service. Welcome to our properties, where comfort and luxury meet.
-              </p>
+              
               <p><a href="#" class="learn-more">Learn More</a></p>
             </div>
           </div>
@@ -422,9 +420,7 @@
             <div class="box-feature">
               <span class="flaticon-building"></span>
               <h3 class="mb-3">Property for Sale</h3>
-              <p>
-                Charming property for sale. Ideal location, well-maintained, excellent value. Your dream home awaits. Inquire now for details!
-              </p>
+              
               <p><a href="#" class="learn-more">Learn More</a></p>
             </div>
           </div>
@@ -432,9 +428,7 @@
             <div class="box-feature">
               <span class="flaticon-house-3"></span>
               <h3 class="mb-3">Property for Rent</h3>
-              <p>
-                Full-service real estate agency offering rental properties in various locations. Find your dream home with us today!
-              </p>
+              
               <p><a href="#" class="learn-more">Learn More</a></p>
             </div>
           </div>
@@ -442,9 +436,7 @@
             <div class="box-feature">
               <span class="flaticon-house-1"></span>
               <h3 class="mb-3">House for Sale</h3>
-              <p>
-                Explore our diverse property listings for sale - great deals, prime locations, expert guidance, and seamless buying experience. Contact us now!
-              </p>
+              
               <p><a href="#" class="learn-more">Learn More</a></p>
             </div>
           </div>
@@ -471,7 +463,7 @@
         <div class="row justify-content-between mb-5">
           <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
             <div class="img-about dots">
-              <img src="{% static 'real/images/hero_bg_3.jpg' %}" alt="Image" class="img-fluid" />
+              <img src="{% static 'real/images/house/h (7).jpg' %}" alt="Image" class="img-fluid" />
             </div>
           </div>
           <div class="col-lg-4">

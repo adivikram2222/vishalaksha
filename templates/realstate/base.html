@@ -82,7 +82,7 @@
                 <ul class="dropdown">
                   <li><a href="{% url 'properties' %}">All</a></li>
                   {% for i in cat %}
-                  <li><a href="{% url 'services' %}">{{i.name}}</a></li>
+                  <li><a href="catrgory/{{i.slug}}">{{i.name}}</a></li>
                   {% endfor %}
                   <!-- /categary/{{i.slug}} -->
                 </ul>
